@@ -13,6 +13,11 @@ python = "^3.11"
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.1"
 pytest-cov = "^4.0.0"
+taskipy = "^1.10.4"
+isort = "^5.12.0"
+mypy = "^1.2.0"
+black = "^23.3.0"
+flake8 = "^6.0.0"
 
 
 [tool.poetry.group.loc.dependencies]
@@ -28,5 +33,12 @@ prospect = "^0.1.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.flake8]
-max-line-length = 120
+[tool.taskipy.tasks]
+conde_style = "black . && isort . 120"
+flake8 = "flake8 ."
+mypy = "mypy . --ignore-missing-imports"
+pre_test = "task conde_style && task flake8 && task mypy && prospect ."
+test = "pytest -s -x --cov=py_codewars -vv"
+post_test = "coverage html"
+show_coverage = "firefox htmlcov/index.html"
+simple_test = "pytest -s -x --cov=py_codewars -vv"
