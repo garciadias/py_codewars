@@ -2,7 +2,7 @@ import pytest
 
 from py_codewars.string_ends_with import solution
 
-fixed_tests_True = (
+FIXED_TESTS_TRUE = (
     ("samurai", "ai"),
     ("ninja", "ja"),
     ("sensei", "i"),
@@ -11,7 +11,7 @@ fixed_tests_True = (
     ("fails", "ails"),
 )
 
-fixed_tests_False = (
+FIXED_TESTS_FALSE = (
     ("sumo", "omo"),
     ("samurai", "ra"),
     ("abc", "abcd"),
@@ -21,6 +21,6 @@ fixed_tests_False = (
 )
 
 
-@pytest.mark.parametrize("text, ending", fixed_tests_True)
-def test_solution_True(text, ending):
+@pytest.mark.parametrize("text, ending", FIXED_TESTS_TRUE)
+def test_solution_true(text, ending):
     assert solution(text, ending) == text.endswith(ending)
