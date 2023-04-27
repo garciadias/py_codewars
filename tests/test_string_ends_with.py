@@ -23,4 +23,9 @@ FIXED_TESTS_FALSE = (
 
 @pytest.mark.parametrize("text, ending", FIXED_TESTS_TRUE)
 def test_solution_true(text, ending):
-    assert solution(text, ending) == text.endswith(ending)
+    assert solution(text, ending) is True
+
+
+@pytest.mark.parametrize("text, ending", FIXED_TESTS_FALSE)
+def test_solution_false(text, ending):
+    assert solution(text, ending) is False
