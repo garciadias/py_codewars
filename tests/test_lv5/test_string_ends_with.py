@@ -1,6 +1,6 @@
 import pytest
 
-from py_codewars.string_ends_with import solution
+from py_codewars.lv5.string_ends_with import solution
 
 FIXED_TESTS_TRUE = (
     ("samurai", "ai"),

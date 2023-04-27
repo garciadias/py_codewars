@@ -1,4 +1,4 @@
-from py_codewars.unique_in_order import unique_in_order
+from py_codewars.lv5.unique_in_order import unique_in_order
 
 
 def test_unique_in_order_str():
